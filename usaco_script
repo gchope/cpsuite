@@ -3,14 +3,10 @@ setopt aliases
 
 ERROR_MSG='Something went wrong'
 
-cpp=('g++-13' '-O2' '-lm' '-std=c++17')
+alias cpp="g++-13 -O2 -lm -std=c++17"
 
 # no idea how java works jiyang good luck
 
-# use shell builtin which to expand aliases
-if ! builtin which g++-13;then
-    echo $ERROR_MSG&&exit;
-fi
-[[ -f ${PROBLEMNAME-'PROBLEMNAME'} ]]||${EDITOR-'vim'} ${PROBLEMNAME-'PROBLEMNAME'}.in
+[[ -f ${PROBLEMNAME-'PROBLEMNAME'}.in ]]||${EDITOR-'vim'} ${PROBLEMNAME-'PROBLEMNAME'}.in
 ${EDITOR-'vim'} ${PROBLEMNAME-'PROBLEMNAME'}.cpp
-$cpp -o ${PROBLEMNAME-'PROBLEMNAME'} ${PROBLEMNAME-'PROBLEMNAME'}.cpp
+cpp -o ${PROBLEMNAME-'PROBLEMNAME'} ${PROBLEMNAME-'PROBLEMNAME'}.cpp

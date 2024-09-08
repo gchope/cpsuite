@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
-setopt shwordsplit
-command=($1)
-unsetopt shwordsplit
+command=$1
+# command is a single word (python files use shebang line)
 for set in ${@:2};do
-	diff <((( ${+TIMEOUT} )) && timeout $TIMEOUT $command < $set || $command < $set) $set:r.out
+	diff <((( ${+TIMEOUT} )) && timeout $TIMEOUT $command< $set||$command< $set) $set:r.out
 done
