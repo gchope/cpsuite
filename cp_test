@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+diff <((( ${+TIMEOUT} ))&&timeout $TIMEOUT ${@:2} < $1||${@:2} < $1) $1:r.out
