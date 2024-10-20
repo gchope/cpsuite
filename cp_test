@@ -1,2 +1,3 @@
 #!/usr/bin/env zsh
-[[ ${#@} < 2 ]]&&echo 'find /Volumes/Work/Downloads/taming_bronze_feb18/*.in(n) -exec cp_test {} ./taming ";"'||diff <((( ${+TIMEOUT} ))&&timeout $TIMEOUT ${@:2} < $1||${@:2} < $1) $1:r.out
+local USAGE='find /Volumes/Work/Downloads/taming_bronze_feb18/*.in(n) -exec cp_test {} ./taming ";"'
+[[ ${#@} < 2 ]]&&echo $USAGE||diff <((( ${+TIMEOUT} ))&&timeout $TIMEOUT ${@:2} < $1||${@:2} < $1) $1:r.out
