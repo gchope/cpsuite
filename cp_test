@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
-local USAGE="usage: find /path/to/testcases/*.in(n) -exec $0 {} /path/to/solution \\;"
-[[ $# < 2 ]]&&echo $USAGE||diff <(timeout ${TIMEOUT:-0} ${@:2} < $1) $1:r.out
+prog=${@:2}
+tc=$1
+[[ $# < 2 ]]&&cat $0||diff <(timeout ${TIMEOUT:-0} $prog < $tc) $tc:r.out
