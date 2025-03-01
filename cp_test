@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
-prog=${@:2}
+#! /usr/bin/env zsh
 tc=$1
+prog=${@:2}
 [[ $# < 2 ]]&&cat $0||diff <(timeout ${TIMEOUT:-0} $prog < $tc) $tc:r.out
