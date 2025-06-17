@@ -1,0 +1,2 @@
+#! /usr/bin/env zsh
+$CPP -o $(perl -pe 's/([a-z])([A-Z])/$1 $2/g; s/[^a-zA-Z0-9]+/ /g; s/(\w+)/\L\u$1/g; s/ //g'<<(basename $(pwd))) main.cpp $@
