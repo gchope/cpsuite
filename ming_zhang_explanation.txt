@@ -1,0 +1,5 @@
+cp_compile -> this makes a Makefile with a target to compile main.cpp to a exec matching the current directory name, then it runs make to compile the code
+
+cp_test -> ...$ZSH_EVAL_CONTEXT... this checks if the script is being run as a function, it's used to show a help message with the source of the code. runs the program specified in the argument with an optional maximum runtime with the specified file as input and compares its output with the corresponding .out file with the same name
+
+cp_batch -> ...$ZSH_EVAL_CONTEXT... this checks if the script is being run as a function, it's used to show a help message with the source of the code. runs cp_test for all the .in files in the given directory
